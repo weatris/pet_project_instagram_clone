@@ -1,0 +1,553 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+.Menu{
+    width: 100%;
+    height: 100%;
+}
+.navbar{
+    width: 100%;
+    height: 50px;
+    background: #333333;
+    text-align: center;
+    z-index: 5;
+    vertical-align: middle;
+}
+.navbar input{
+    height: 30px;
+    margin: 10px 0;
+    width: 260px;
+    box-sizing: border-box;
+    text-indent: 10px;
+    border: none;
+}
+.navbar button{
+    height:30px;
+    margin: 10px;
+    box-sizing: border-box;
+    width:120px;
+}
+.sidebar{
+    width: 200px;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    background: #333333;
+    color: white;
+    align-items: center;
+    left: -220px;
+    transition: all 0.8s ease;
+    opacity: 0;
+    z-index: 10;
+}
+.sidebar a{
+    font-size: 32px;
+    color: white;
+    cursor: pointer;
+    width: 100%;
+    text-align: center;
+    user-select: none;
+    margin: 15px 0 0 0;
+    text-decoration: none;
+}
+.sidebar a:visited{
+    text-decoration: none;
+    color: white;
+}
+.sidebar a:hover{
+    background: #232323;
+    transition: all 0.5s;
+    padding-left:15px;
+    box-sizing: border-box;
+}
+.sidebar header{
+    line-height: 50px;
+    font-size: 32px;
+    background: #232323;
+    width: 100%;
+    text-align: center;
+    box-sizing: border-box;
+    border-right: solid silver 1px;
+    border-bottom: solid silver 1px;
+    user-select: none;
+}
+#check{
+    display: none;
+}
+.img{
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    user-select: none;
+    display: block;
+    position: absolute;
+    top: 0;
+    transition: all 0.9s ease;
+}
+#notifications{
+    right:10px;
+}
+#open{
+    left: 5px;
+}
+#close{
+    left: -50px;
+    z-index: 3;
+    opacity: 0;
+}
+#check:checked~.sidebar{
+    left: 0;
+    opacity: 100;
+}
+
+#check:checked~ label #close{
+    left: 200px;
+    opacity: 100;
+}
+.wrapper{
+    width: 98%;
+    height: 82% !important;
+    margin: 1%;
+    background: white;
+    overflow-y: scroll;
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    box-sizing: border-box;
+    padding: 10px;
+    justify-content: space-around;
+    align-content: flex-start;
+    flex-direction: row; 
+}
+.video{
+    background: #f1f1f1;
+    border-radius: 5px;
+    margin: 10px;
+    max-height: 290px;
+    width: 350px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: inline-block;
+    border: solid silver 2px;
+}
+.video img{
+    width: 100%;
+    height: 70%;
+    object-fit: contain;
+}
+#history .video img{
+    height: 60%;
+}
+.video_name{
+    text-indent: 5px;
+    background: rgb(156, 156, 156);
+    padding: 5px;
+    margin-bottom: 5px;
+}
+.extra{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.extra h4{
+    width: 40%;
+    margin-bottom: 5px;
+}
+.search{
+    width: 96%;
+    margin: 2%;
+    height: 60px;
+    background: white;
+    border-radius: 20px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.search div{
+    width: 15%;
+    height: 40px;
+    background: silver;
+    text-align: center;
+}
+.panel{
+    width: 40%;
+    max-width: 600px;
+    min-width: 500px;
+    margin: 5% auto;
+    background:white;
+    border-radius: 20px;
+}
+.panel h1{
+    color: white;
+    background: #333;
+    margin: 0;
+    border-radius: 20px 20px 0 0;
+    padding: 5px;
+    text-align: center;
+}
+.file_input{
+    width: 100%;
+    height: 230px;
+    margin-top: 15px;
+}
+#file_input{
+    display: none;
+}
+.file_input label{
+    display: block;
+    width: 90%;
+    height: 220px;
+    border: dashed black 1px;
+    margin: 0 5%;
+    text-align: center;
+    background: #d7f6fc;
+    box-sizing: border-box;
+    cursor:pointer;
+    transition: 0.5s;
+}
+#preview{
+    width: 90%;
+    max-height: 0;
+    margin: 10px 5%;
+    transition: 0.5s;
+    object-fit: contain;
+}
+#image{
+    width:100% !important;
+    height:360px;
+    background:rgb(234, 253, 238);
+    padding-bottom: 20px;
+}
+#image img{
+    width: 96%;
+    height: 96%;
+    margin: 2%;
+    object-fit: contain;
+    background:rgb(245, 245, 245);
+}
+.panel input{
+    width: 90%;
+    height:20px;
+    margin-left:5%;
+    box-sizing: border-box;
+}
+.panel textarea{
+    width: 90%;
+    margin-left:5%;
+    margin-top: 20px;
+    box-sizing: border-box;
+    height: 120px;
+    resize:none;
+}
+.panel input:focus, .panel textarea{
+    outline:none !important;
+}
+.panel_buttons{
+    width: 90%;
+    margin:20px 5%;
+    height: 80px;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+.panel_buttons button{
+    width: 120px;
+    height: 40px;
+    border-radius: 15px;
+    margin: 10px;
+    cursor: pointer;
+    font-weight: 400;
+    color: white;
+    border: solid black 2 px;
+}
+.panel .cancel{
+    background: rgb(202, 34, 67);
+}
+.panel .cancel:hover{
+    background: rgb(170, 11, 43);
+}
+.panel .submit{
+    background: rgb(12, 212, 12);
+}
+.panel .submit:hover{
+    background: green;
+}
+.panel .delete{
+    background: rgb(241, 137, 68);
+}
+.panel .delete:hover{
+    background: rgb(248, 119, 33);
+}
+.watch {
+    display: flex;
+    flex-direction: column;
+    height: calc(100vh - 50px);
+}
+#main {
+    display: flex;
+    flex-grow: 1;
+    height: 100%;
+}
+#display_recommendation{
+    position: absolute;
+    top: 60px;
+    right: -10px;
+    width: 80px;
+    height: 60px;
+    cursor: pointer;
+}
+.content {
+    flex-grow: 1;
+    background: white;
+    height: 84%;
+    width: 80% !important;
+}
+.recommendation, .content, #data {
+    align-items: center;
+    justify-content: center;
+    padding: 8px 10px;
+    font-size: 20px;
+}
+#watched{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+#data{
+    background-color: rgb(225, 225, 225);
+    position: absolute;
+    border-top: solid #333 3px;
+    width: 100%;
+    left: 0;
+    height: 12%;
+    bottom: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+#info, .details{
+    width: 40%;
+    border: solid #333 2px;
+    box-sizing: border-box;
+    display: flex;
+    flex-wrap: wrap;
+    height: 90%;
+}
+#info h2{
+    flex: 1 0 91%;
+    margin: 10px;
+}
+#info h4{
+    flex: 1 0 25%;
+    margin: 10px;
+}
+.details_buttons{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+}
+.details_buttons button{
+    width: 120px;
+    padding: 10px;
+    height: 50px;
+    border-radius: 15px;
+    border: none;
+}
+.like{
+    background: rgb(127, 135, 252);
+}
+.like:hover{
+    background: rgb(98, 81, 248);
+}
+.is_liked{
+    background: white;
+}
+.is_liked:hover{
+    border: solid rgb(98, 81, 248) 2px;
+}
+.more{
+    background: rgb(152, 252, 127);
+}
+.more:hover{
+    background: rgb(92, 252, 52);
+}
+.subscribe{
+    background: rgb(252, 183, 127);
+}
+.subscribe:hover{
+    background: rgb(252, 109, 52);
+}
+.is_subscribed{
+    background: white;
+}
+.is_subscribed:hover{
+    border: solid rgb(252, 109, 52) 2px;
+}
+.recommendation{
+    width: 20%;
+    margin-left: 0;
+    background-color: rgb(243, 243, 243);
+    overflow-y: scroll;
+    height: 84%;
+    transition: width;
+    transition-duration: 1s;
+    transition-timing-function: ease;
+    border-left: solid #333 3px;
+}
+.shown{
+    width: 0;
+    padding: 20px 0;
+    border: none;
+}
+.recommended{
+    width: 90%;
+    height: 190px;
+    border: solid silver 1px;
+    background:white;
+    margin: 10px 5%;
+    padding: 5px;
+    box-sizing: border-box;
+}
+.recommended_img{
+    width: 100%;
+    height: 80%;
+    object-fit: contain;
+}
+.recommended h3{
+    text-indent: 5px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden; 
+    width: 98%;
+    margin: 0 1%;
+}
+::-webkit-scrollbar {
+    width: 10px;
+}
+::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+}
+::-webkit-scrollbar-thumb {
+    background: #888; 
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+}
+.details_panel{
+    position: absolute;
+    width: 80%;
+    height: 80%;
+    background: white;
+    border-radius: 20px;
+    border: solid silver 2px;
+    left: 10%;
+    top: 10%;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    z-index: 10;
+}
+.details_panel .title{
+    color:white;
+    background: #333;
+    text-align: center;
+    line-height: 50px;
+    border-radius: 20px 20px 0 0;
+}
+.details_panel img{
+    right:10px;
+}
+.details_panel .description{
+    width: 98%;
+    margin: 1%;
+    max-height: 30%;
+    min-height: 10%;
+    text-indent: 10px;
+    background: whitesmoke;
+    padding: 10px;
+    box-sizing: border-box;
+}
+.details_panel .comments{
+    width: 98%;
+    margin: 5% 1%;
+    text-indent: 10px;
+    background: whitesmoke;
+    flex-grow: 1;
+    box-sizing: border-box;
+    border-radius: 10px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+.details_panel .create_comment{
+    background: silver;
+    padding: 10px;
+    box-sizing: border-box;
+    width: 100%;
+    margin: 0;
+    border-radius: 10px 10px 0 0;
+    height: 50px;
+    position: sticky;
+    top: 0;
+}
+.create_comment input{
+    width: 70%;
+    line-height: 30px;
+    text-indent: 15px;
+}
+.create_comment button{
+    width: 25%;
+    line-height: 30px;
+    float: right;
+}
+.comment{
+    width: 98%;
+    background:rgb(228, 228, 228);
+    margin: 10px 1%;
+    border-radius: 20px 0 20px 0;
+}
+.comment_user{
+    padding:5px 20px 5px 10px;
+    display: table;
+    background:#333;
+    color:white;
+    border-radius: 20px 0 20px 0;
+    max-width: 220px;
+    text-overflow:  ellipsis;
+}
+.comment_content{
+    padding: 10px;
+    width: 100%;
+}
+.delete_watch{
+    color: white;
+    width: 100%;
+    background-color: rgb(105, 12, 31);
+    text-align: center;
+    cursor: pointer;
+    font-size: 24px;
+}
+.clear_history{
+    position: absolute;
+    margin: 15px;
+    padding: 10px;
+    bottom: 0;
+    font-size: 28px;
+    right: 5px;
+}
+.divider{
+    width: 90%;
+    margin: 5%;
+    height: 20px;
+    background:silver;
+    border-radius: 10px;
+    text-align: center;
+}
+
