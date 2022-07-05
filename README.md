@@ -1,1 +1,1 @@
-# pt_project_instagram_clone
+# pet_project_instagram_clone
