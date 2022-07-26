@@ -1,15 +1,15 @@
-# pet_project_instagram_clone
+pet_project_instagram_clone
 
 used technologies
-  # React (js) 
-  # Node js
-  # PostgreSQL
-  # Mailer
-  # Multer
-  # Socket io
+  React (js) 
+  Node js
+  PostgreSQL
+  Mailer
+  Multer
+  Socket io
   
-also
-  # infinite scrolling
-  # dynamic routes
-  # email password recovery
-  # token auth
+# also
+  infinite scrolling
+  dynamic routes
+  email password recovery
+  token auth
