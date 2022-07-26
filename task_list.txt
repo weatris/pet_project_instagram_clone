@@ -1,12 +1,6 @@
-subscribe ability ....
-notifications (email+front)
-recommended (will be for subscribers)
-content maker page
-statistics
-better routes
-split css
-ads
-user page
+update code style
+recommended  //learning
+
+navbar //need images
 tests
-update style !
-update code style 
+bottom navigation
